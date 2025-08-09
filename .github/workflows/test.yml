@@ -1,0 +1,13 @@
+name: Test Project
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install git
+        run: sudo apt-get update && sudo apt-get install -y git
+      - name: Clone specific branch
+        run: |
+          git clone --branch master https://github.com/Actions-Learn/second-action-react-demo.git repo
+          cd repo
+          git log -1
